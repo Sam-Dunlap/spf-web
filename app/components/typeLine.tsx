@@ -68,20 +68,21 @@ export default function TypeLine({children} : {children: PokeAPIPokemon}) {
     switch (pokemon.types.length) {
         case 1:
             return (
-                <div>
-                    <Image src={type0} height={14} width={70} alt={pokemon.types[0].type.name}></Image>
+                <div className="flex flex-row justify-center items-center">
+                    <Image src={type0} title={pokemon.types[0].type.name} height={20} width={20} alt={pokemon.types[0].type.name}></Image>
                 </div>
             )
         case 2:
             const type1 = icon(pokemon.types[1].type.name);
             return (
-                <div>
-                    <Image src={type0} height={14} width={70} alt={pokemon.types[0].type.name}></Image>
-                    <Image src={type1} height={14} width={70} alt={pokemon.types[1].type.name}></Image>
+                <div className="flex flex-row justify-center items-center">
+                    <Image src={type0} title={pokemon.types[0].type.name} height={20} width={20} alt={pokemon.types[0].type.name}></Image>
+                    <Image src={type1} title={pokemon.types[1].type.name} height={20} width={20} alt={pokemon.types[1].type.name}></Image>
                 </div>
 
             )
         default:
+            // pokemon don't have < 1 or > 2 types so TypeLine will never reach the default case
             return (
                 <></>
             )

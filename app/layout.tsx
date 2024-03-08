@@ -20,7 +20,7 @@ export default function RootLayout({
         <div className="grid grid-cols-[200px_1fr] grid-rows-[50px_1fr] min-h-screen">
           <div className="col-start-1 col-end-4 row-start-1 row-end-2 bg-red-500 min-h-">header</div>
           <div className="col-start-1 col-end-2 row-start-2 row-end-13 bg-green-900">sidebar</div>
-          <div className="px-1 col-start-2 col-end-3 row-start-2 row-end-13 grid grid-cols-9">
+          <div className="col-start-2 col-end-3 row-start-2 row-end-13">
             {children}
           </div>
         </div>

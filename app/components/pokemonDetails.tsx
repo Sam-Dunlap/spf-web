@@ -15,7 +15,7 @@ export default function PokemonDetails({children} : {children: PokeAPIPokemon}) 
     }
     const hw = sigmoidHeightAdjustment(pokemon.height);
     return (
-        <li className="h-[4.75rem] bg-slate-400 border-2 border-red-800 mb-2 grid grid-cols-[repeat(2,_125px)_repeat(6,_4rem)_1fr] rounded grid-rows-1 items-center justify-items-center">
+        <li className="h-[4.75rem] bg-zinc-900 mb-2 grid grid-cols-[repeat(2,_125px)_repeat(6,_5rem)] rounded grid-rows-1 items-center justify-items-center">
             <Image src={pokemon.sprites['front_default']} alt={pokemon.name} height={hw} width={hw} />
             <div className="col-start-2 col-span-1 flex flex-col justify-center items-center">
                 <p className="text-sm">{restoreFullName(pokemon.name)}</p>

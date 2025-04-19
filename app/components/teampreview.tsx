@@ -24,10 +24,10 @@ export async function TeamPreview({children} : {children : Team}) {
         )
     });
     return (
-            <Link href={`teams/${children.team_name}`} className="transition ease-in-out h-32 hover:scale-[1.02] border-solid rounded border-slate-700 grid grid-cols-[300px_1fr_100px] w-9/12 hover:border-white border-2 bg-zinc-800 items-center justify-items-center">
+            <Link href={`teams/${children.uuid}`} className="transition ease-in-out h-32 hover:scale-[1.02] border-solid rounded border-slate-700 grid grid-cols-[300px_1fr_100px] w-9/12 hover:border-white border-2 bg-zinc-800 items-center justify-items-center">
                 <div className="text-center">
                     <h1 className="text-xl">{children.team_name}</h1>
-                    <h3 className="text-sm">{children.coach}</h3>
+                    <h3 className="text-sm">Coach: {children.coach_name}</h3>
                 </div>
                 <div className="flex flex-row justify-between col-start-2">
                     {images}

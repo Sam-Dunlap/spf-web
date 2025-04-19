@@ -1,16 +1,16 @@
-import { getPokemon, teamByTeamName } from "@/api"
+import { getPokemon, fetchTeamByID } from "@/api"
 import PokemonDetails from "@/app/components/pokemonDetails";
 import PokeAPIPokemon from "@/types/pokeapi";
 import { notFound } from "next/navigation";
 import ControlPanel from "./controlPanel";
 
-export default async function TeamPage({ params }: { params: { team_name: string } }) {
-
-    const team = teamByTeamName(params.team_name);
+export default async function TeamPage({ params }: { params: { team_id: string } }) {
+    let res = await fetchTeamByID(params.team_id);
     let pokemon: PokeAPIPokemon[];
-    if (!team) {
+    if (res.err) {
         notFound();
     } else {
+        const team = res.val;
         pokemon = await Promise.all(team.pokemon.map(mon => getPokemon(mon)));
     }
     const details = pokemon.map(p => <PokemonDetails key={p.id}>{p}</PokemonDetails>)

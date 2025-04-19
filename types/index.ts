@@ -1,5 +1,6 @@
-import { DatabaseError } from "./err";
-import Team from "./team";
+import * as errors from "./err";
+import * as team from "./team";
+import * as pokeapi from "./pokeapi";
 
 export enum DraftStatus {
 	Pending,
@@ -8,3 +9,5 @@ export enum DraftStatus {
 	Finished,
 	Archived
 }
+
+export { errors, team, pokeapi };

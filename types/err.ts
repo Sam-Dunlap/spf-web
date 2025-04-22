@@ -1,3 +1,5 @@
 export enum DatabaseError {
-	QueryReturnedNoResultsError
+	QueryReturnedNoResultsError,
+	DatabaseUnreachableError,
+	UnknownPGSQLError
 }

@@ -1,13 +1,6 @@
 import * as errors from "./err";
 import * as team from "./team";
 import * as pokeapi from "./pokeapi";
+import * as draft from "./draft";
 
-export enum DraftStatus {
-	Pending,
-	Active,
-	Paused,
-	Finished,
-	Archived
-}
-
-export { errors, team, pokeapi };
+export { errors, team, pokeapi, draft };
